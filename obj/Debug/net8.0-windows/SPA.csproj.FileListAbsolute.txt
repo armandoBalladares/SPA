@@ -1,0 +1,6 @@
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.Form1.resources
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.csproj.GenerateResource.cache
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.AssemblyInfoInputs.cache
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.AssemblyInfo.cs
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.csproj.CoreCompileInputs.cache

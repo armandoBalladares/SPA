@@ -1,0 +1,12 @@
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\bin\Debug\net8.0\SPA.deps.json
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\bin\Debug\net8.0\SPA.dll
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\bin\Debug\net8.0\SPA.pdb
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\SPA.csproj.AssemblyReference.cache
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\SPA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\SPA.AssemblyInfoInputs.cache
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\SPA.AssemblyInfo.cs
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\SPA.csproj.CoreCompileInputs.cache
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\SPA.dll
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\refint\SPA.dll
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\SPA.pdb
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0\ref\SPA.dll
