@@ -11,6 +11,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\" />
+    <Folder Include="Domain\Services\" />
+    <Folder Include="Infraestructure\" />
+    <Folder Include="UI\" />
   </ItemGroup>
 
 </Project>
