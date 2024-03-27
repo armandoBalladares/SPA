@@ -18,6 +18,9 @@ namespace SPA.Domain
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Sales> Sales { get; set; }
+        public DbSet<Employee> Employees { get; set; }
        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder )
         {
             if ( !optionsBuilder.IsConfigured ) {
@@ -34,6 +37,11 @@ namespace SPA.Domain
             modelBuilder.Entity<Operator>().HasData(
                 new Operator { Id = 1, Name = "Claro", Archived = false, Created = DateTime.Now },
                 new Operator { Id = 2, Name = "Tigo", Archived = false, Created = DateTime.Now }
+                );
+            modelBuilder.Entity<Role>().HasData(
+                new Role { Id = 1, Name = "Administrador" },
+                new Role { Id = 2, Name = "Supervisor" },
+                new Role { Id = 3, Name = "Vendedor" }
                 );
         }
     }
