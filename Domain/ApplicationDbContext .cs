@@ -16,6 +16,8 @@ namespace SPA.Domain
         public DbSet<TypeNumber> TypeNumbers { get; set; }
         public DbSet<Number> Numbers { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Client> Clients { get; set; }
        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder )
         {
             if ( !optionsBuilder.IsConfigured ) {
