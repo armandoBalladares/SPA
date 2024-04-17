@@ -155,3 +155,5 @@ C:\Users\DELL 7480\Documents\Development\Pract\SPA\bin\Debug\net8.0-windows\ru\M
 C:\Users\DELL 7480\Documents\Development\Pract\SPA\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\DELL 7480\Documents\Development\Pract\SPA\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\DELL 7480\Documents\Development\Pract\SPA\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.Application.ManageProvider.resources
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.Properties.Resources.resources
