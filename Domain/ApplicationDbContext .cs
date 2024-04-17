@@ -21,7 +21,15 @@ namespace SPA.Domain
         public DbSet<Order> Orders { get; set; }
         public DbSet<Sales> Sales { get; set; }
         public DbSet<Employee> Employees { get; set; }
-       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder )
+        public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Production> Productions { get; set; }
+        public DbSet<Provider> Providers { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<OrderDetails> OrderDetails { get; set; }
+        public DbSet<SalesDetail> SalesDetails { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder )
         {
             if ( !optionsBuilder.IsConfigured ) {
                 optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
