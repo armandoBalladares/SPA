@@ -1,5 +1,3 @@
-using SPA.Application;
-
 namespace SPA
 {
     internal static class Program

@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Services\" />
+    <Folder Include="Application\" />
     <Folder Include="Infraestructure\" />
     <Folder Include="UI\" />
   </ItemGroup>
