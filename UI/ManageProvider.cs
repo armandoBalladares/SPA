@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.ObjectModel;
 
 namespace SPA.UI
 {
@@ -40,19 +31,21 @@ namespace SPA.UI
             }
             this.disableControls();
             Collection<Object> data = new Collection<Object>();
-            data.Add( ctName.Text.ToString().Trim() );
-            data.Add( ctPhone.Text.ToString().Trim() );   
-            if ( this.manageProvider.add(data) > 0 )
+            data.Add(ctName.Text.ToString().Trim());
+            data.Add(ctPhone.Text.ToString().Trim());
+            if (this.manageProvider.add(data) > 0)
             {
                 MessageBox.Show("El proveedor se agregó correctamente..", "Notificación", MessageBoxButtons.OK);
             }
             this.enableControls();
         }
-        private void disableControls() { 
+        private void disableControls()
+        {
             this.mainContainerPanel.Enabled = false;
         }
-        private void enableControls() {
-           this.mainContainerPanel.Enabled = true;
+        private void enableControls()
+        {
+            this.mainContainerPanel.Enabled = true;
         }
         private void ctPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -67,6 +60,12 @@ namespace SPA.UI
         {
             this.ctName.Clear();
             this.ctPhone.Clear();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.manageProvider = null;
+            this.Close();
         }
     }
 }
