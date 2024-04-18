@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            mainContainerPanel = new Panel();
             btnCancel = new Button();
             btnClear = new Button();
             btAdd = new Button();
@@ -37,23 +37,23 @@
             ctName = new TextBox();
             lbName = new Label();
             lbTitle = new Label();
-            panel1.SuspendLayout();
+            mainContainerPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // mainContainerPanel
             // 
-            panel1.Controls.Add(btnCancel);
-            panel1.Controls.Add(btnClear);
-            panel1.Controls.Add(btAdd);
-            panel1.Controls.Add(ctPhone);
-            panel1.Controls.Add(lbPhone);
-            panel1.Controls.Add(ctName);
-            panel1.Controls.Add(lbName);
-            panel1.Controls.Add(lbTitle);
-            panel1.Location = new Point(38, 29);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1256, 539);
-            panel1.TabIndex = 1;
+            mainContainerPanel.Controls.Add(btnCancel);
+            mainContainerPanel.Controls.Add(btnClear);
+            mainContainerPanel.Controls.Add(btAdd);
+            mainContainerPanel.Controls.Add(ctPhone);
+            mainContainerPanel.Controls.Add(lbPhone);
+            mainContainerPanel.Controls.Add(ctName);
+            mainContainerPanel.Controls.Add(lbName);
+            mainContainerPanel.Controls.Add(lbTitle);
+            mainContainerPanel.Location = new Point(38, 29);
+            mainContainerPanel.Name = "mainContainerPanel";
+            mainContainerPanel.Size = new Size(1256, 539);
+            mainContainerPanel.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -88,6 +88,7 @@
             btAdd.TabIndex = 13;
             btAdd.Text = "Agregar";
             btAdd.UseVisualStyleBackColor = true;
+            btAdd.Click += btAdd_Click;
             // 
             // ctPhone
             // 
@@ -96,6 +97,7 @@
             ctPhone.Name = "ctPhone";
             ctPhone.Size = new Size(500, 57);
             ctPhone.TabIndex = 12;
+            ctPhone.KeyPress += ctPhone_KeyPress;
             // 
             // lbPhone
             // 
@@ -144,18 +146,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 255);
             ClientSize = new Size(1333, 600);
-            Controls.Add(panel1);
+            Controls.Add(mainContainerPanel);
             Name = "ManageProvider";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage Provider";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Load += ManageProvider_Load;
+            mainContainerPanel.ResumeLayout(false);
+            mainContainerPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel mainContainerPanel;
         private Button btnCancel;
         private Button btnClear;
         private Button btAdd;

@@ -8,7 +8,7 @@ namespace SPA.Domain.Services
 {
     public interface IOperations
     {
-        public void show(int id ); 
+        static virtual protected void show(int id) { }
         protected void add(Array data);
         void update(Array data, int id );
         void delete(int id);

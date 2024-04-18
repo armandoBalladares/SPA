@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using SPA.Domain.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,28 +8,42 @@ using System.Threading.Tasks;
 
 namespace SPA.Domain.Services
 {
-    public class ProviderService: IOperations
+    public class ProviderService
     {
-        public ProviderService() { }
+        private readonly SPA.Domain.ApplicationDbContext _context;
 
-        void IOperations.add(Array data)
-        {
-            throw new NotImplementedException();
+        public ProviderService() {
+            if ( this._context == null )
+            this._context = new SPA.Domain.ApplicationDbContext();
         }
 
-        void IOperations.delete(int id)
+        public  void show(int id)
         {
-            throw new NotImplementedException();
+           
         }
 
-        void IOperations.show(int id)
+        public int add(List<Object> data )
         {
-            throw new NotImplementedException();
+            if (data.IsNullOrEmpty()) return -1;
+            // Convert the collection to an array
+            object[] dataSource = data.ToArray();;
+            Provider provider = new Provider {
+                Name = dataSource[0].ToString(),
+                Phone = dataSource[1].ToString()
+            };
+            this._context.Providers.Add(provider);
+            return this._context.SaveChanges();
+
         }
 
-        void IOperations.update(Array data, int id)
+        void delete(int id)
         {
-            throw new NotImplementedException();
+            
+        }
+
+        void update(Array data, int id)
+        {
+           
         }
     }
 }
