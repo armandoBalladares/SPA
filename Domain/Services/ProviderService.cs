@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using SPA.Domain.Entity;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,19 @@ namespace SPA.Domain.Services
         public  void show(int id)
         {
            
+        }
+
+        public List<Provider> list( IDictionary<string, object> paramsQuery )
+        {
+            if ( paramsQuery.Count==0) {
+                return this._context.Providers.ToList();
+            }
+            return this._context.Providers.ToList(); 
+        }
+        
+        public System.ComponentModel.BindingList<Provider> bindingList( ) {
+            this._context.Providers.Load();
+            return this._context.Providers.Local.ToBindingList();
         }
 
         public int add(List<Object> data )
