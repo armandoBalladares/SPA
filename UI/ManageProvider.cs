@@ -67,5 +67,10 @@ namespace SPA.UI
             this.manageProvider = null;
             this.Close();
         }
+
+        private void mainContainerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

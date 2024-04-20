@@ -50,9 +50,18 @@ namespace SPA.Domain.Services
 
         }
 
-        void delete(int id)
+        public int delete(int id)
         {
-            
+            var foundProvider = this._context.Providers.Find(id);
+            if (foundProvider != null)
+            {
+                this._context.Providers.Remove(foundProvider);
+                return this._context.SaveChanges();
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         void update(Array data, int id)

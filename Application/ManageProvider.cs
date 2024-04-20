@@ -29,5 +29,9 @@ namespace SPA.Application
         {
             return this.providerService.bindingList();
         }
+        public int delete( int id )
+        {
+            return this.providerService.delete( id );
+        }
     }
 }

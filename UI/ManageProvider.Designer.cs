@@ -31,7 +31,7 @@
             mainContainerPanel = new Panel();
             btnCancel = new Button();
             btnClear = new Button();
-            btAdd = new Button();
+            btnAdd = new Button();
             ctPhone = new TextBox();
             lbPhone = new Label();
             ctName = new TextBox();
@@ -44,7 +44,7 @@
             // 
             mainContainerPanel.Controls.Add(btnCancel);
             mainContainerPanel.Controls.Add(btnClear);
-            mainContainerPanel.Controls.Add(btAdd);
+            mainContainerPanel.Controls.Add(btnAdd);
             mainContainerPanel.Controls.Add(ctPhone);
             mainContainerPanel.Controls.Add(lbPhone);
             mainContainerPanel.Controls.Add(ctName);
@@ -54,6 +54,7 @@
             mainContainerPanel.Name = "mainContainerPanel";
             mainContainerPanel.Size = new Size(1256, 539);
             mainContainerPanel.TabIndex = 1;
+            mainContainerPanel.Paint += mainContainerPanel_Paint;
             // 
             // btnCancel
             // 
@@ -79,17 +80,17 @@
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
-            // btAdd
+            // btnAdd
             // 
-            btAdd.Cursor = Cursors.Hand;
-            btAdd.Font = new Font("Segoe UI Black", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btAdd.Location = new Point(111, 392);
-            btAdd.Name = "btAdd";
-            btAdd.Size = new Size(285, 78);
-            btAdd.TabIndex = 13;
-            btAdd.Text = "Agregar";
-            btAdd.UseVisualStyleBackColor = true;
-            btAdd.Click += btAdd_Click;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.Font = new Font("Segoe UI Black", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.Location = new Point(111, 392);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(285, 78);
+            btnAdd.TabIndex = 13;
+            btnAdd.Text = "Agregar";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btAdd_Click;
             // 
             // ctPhone
             // 
@@ -162,7 +163,7 @@
         private Panel mainContainerPanel;
         private Button btnCancel;
         private Button btnClear;
-        private Button btAdd;
+        private Button btnAdd;
         private TextBox ctPhone;
         private Label lbPhone;
         private TextBox ctName;
