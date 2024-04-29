@@ -30,7 +30,6 @@ namespace SPA.Domain.Services
                 return this._context.Providers.ToList();
             }
             else {
-                MessageBox.Show("tiene que buscar");
                 var productsFound = this._context.Providers.Where(
                     p => p.Name.Contains(paramsQuery["Name"])
                     ).ToList();
