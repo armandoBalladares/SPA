@@ -23,12 +23,19 @@ namespace SPA.Domain.Services
            
         }
 
-        public List<Provider> list( IDictionary<string, object> paramsQuery )
+        public List<Provider> list( IDictionary<string, string> paramsQuery )
         {
-            if ( paramsQuery.Count==0) {
+            if (paramsQuery.Count == 0)
+            {
                 return this._context.Providers.ToList();
             }
-            return this._context.Providers.ToList(); 
+            else {
+                MessageBox.Show("tiene que buscar");
+                var productsFound = this._context.Providers.Where(
+                    p => p.Name.Contains(paramsQuery["Name"])
+                    ).ToList();
+                return productsFound;
+            }
         }
         
         public System.ComponentModel.BindingList<Provider> bindingList( ) {
@@ -68,5 +75,10 @@ namespace SPA.Domain.Services
         {
            
         }
+        public void saveChange()
+        {
+            this._context.SaveChanges();
+        }
+        
     }
 }

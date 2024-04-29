@@ -21,7 +21,7 @@ namespace SPA.Application
         {
             return providerService.add( data.ToList() );
         }
-        public List<Provider> list(IDictionary<string, object> paramsQuery )
+        public List<Provider> list(IDictionary<string, string> paramsQuery )
         {
             return providerService.list( paramsQuery);
         }
@@ -32,6 +32,9 @@ namespace SPA.Application
         public int delete( int id )
         {
             return this.providerService.delete( id );
+        }
+        public void saveChange() {
+           this.providerService.saveChange();
         }
     }
 }

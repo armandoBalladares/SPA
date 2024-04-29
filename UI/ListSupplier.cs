@@ -46,9 +46,24 @@ namespace SPA.UI
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            this.searchBoxTerm();
         }
 
+        // find a supplier
+        private void searchBoxTerm() {
+
+            if (this.ctSearchTerm.Text.Trim().Equals("") ) {
+                MessageBox.Show("Debes introducir el nombre del proveedor a buscar.", "Notificación", MessageBoxButtons.OK);
+                this.loadDataSource();
+                return;
+            }
+            var paramsSearch = new Dictionary<string, string>()
+            {
+                {"Name", ctSearchTerm.Text.Trim() }
+            };
+
+            this.dgvProvider.DataSource = this.manageProvider.list( paramsSearch );
+        }
         private void containerPanelActions_Paint(object sender, PaintEventArgs e)
         {
 
@@ -101,7 +116,7 @@ namespace SPA.UI
 
         private void pbSaveAction_Click(object sender, EventArgs e)
         {
-
+            this.manageProvider.saveChange();
         }
 
         private void dgvProvider_CellClick(object sender, DataGridViewCellEventArgs e)
