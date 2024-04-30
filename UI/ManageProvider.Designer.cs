@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageProvider));
             mainContainerPanel = new Panel();
             btnCancel = new Button();
             btnClear = new Button();
@@ -42,6 +43,8 @@
             // 
             // mainContainerPanel
             // 
+            mainContainerPanel.BackColor = Color.Transparent;
+            mainContainerPanel.BorderStyle = BorderStyle.FixedSingle;
             mainContainerPanel.Controls.Add(btnCancel);
             mainContainerPanel.Controls.Add(btnClear);
             mainContainerPanel.Controls.Add(btnAdd);
@@ -147,6 +150,8 @@
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 255);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1333, 600);
             Controls.Add(mainContainerPanel);
             Name = "ManageProvider";

@@ -33,10 +33,12 @@ namespace SPA.UI
         private void loadDataSource()
         {
             var paramsQuery = new Dictionary<string, string>();
+            //this.dgvProvider.DataSource = new List<object>();
+            //this.dgvProvider.Refresh();
             this.dgvProvider.DataSource = this.manageProvider.list(paramsQuery);
-            // this.providerBindingSource.DataSource = this.manageProvider.bindingList();
-            this.dgvProvider.Update();
+            //this.providerBindingSource.DataSource = this.manageProvider.bindingList();
             this.dgvProvider.Refresh();
+            Console.WriteLine( this.manageProvider.list(paramsQuery ) );
         }
         private void initComponent()
         {
@@ -80,7 +82,7 @@ namespace SPA.UI
 
         private void pbAdd_Click(object sender, EventArgs e)
         {
-            ManageProvider manageProviderForm = new ManageProvider();
+            ManageProvider manageProviderForm = new ManageProvider("add", 0);
             manageProviderForm.ShowDialog();
             this.loadDataSource();
         }
@@ -111,11 +113,24 @@ namespace SPA.UI
                 MessageBox.Show("Algo no salió bien, inténtelo nuevamente.", "Notificación", MessageBoxButtons.OK );
             }
             this.loadDataSource();
+            this.selectedRow = null;
+            this.isSelectedRow = false;
         }
 
         private void pbUpdateAction_Click(object sender, EventArgs e)
         {
+            if (!this.isSelectedRow || this.selectedRow == null)
+            {
+                MessageBox.Show("Debes seleccionar un registro a editar.", "Notificación", MessageBoxButtons.OK);
+                return;
+            }
+            
+            ManageProvider manageProviderForm = new ManageProvider("edit", int.Parse( this.selectedRow.Cells[0].Value.ToString() ) );
+            manageProviderForm.ShowDialog();
 
+            this.loadDataSource();
+            this.selectedRow = null;
+            this.isSelectedRow = false;
         }
 
         private void pbSaveAction_Click(object sender, EventArgs e)

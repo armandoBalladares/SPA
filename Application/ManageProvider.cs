@@ -36,5 +36,12 @@ namespace SPA.Application
         public void saveChange() {
            this.providerService.saveChange();
         }
+        public int update(Collection<Object> data)
+        {
+            return providerService.update(data.ToList());
+        }
+        public Provider show( int identifier ) {
+            return providerService.show( identifier );
+        }
     }
 }

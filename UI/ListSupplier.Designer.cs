@@ -226,6 +226,7 @@
             pbSaveAction.Size = new Size(132, 121);
             pbSaveAction.TabIndex = 16;
             pbSaveAction.TabStop = false;
+            pbSaveAction.Visible = false;
             pbSaveAction.Click += pbSaveAction_Click;
             // 
             // toolTipSearchButton

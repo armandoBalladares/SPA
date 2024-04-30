@@ -18,9 +18,9 @@ namespace SPA.Domain.Services
             this._context = new SPA.Domain.ApplicationDbContext();
         }
 
-        public  void show(int id)
+        public Provider show(int id)
         {
-           
+            return this._context.Providers.FirstOrDefault(record => record.Id == id);
         }
 
         public List<Provider> list( IDictionary<string, string> paramsQuery )
@@ -70,9 +70,16 @@ namespace SPA.Domain.Services
             }
         }
 
-        void update(Array data, int id)
+        public int update( List<Object> data )
         {
-           
+            if (data.IsNullOrEmpty()) return -1;
+            // Convert the collection to an array
+            object[] dataSource = data.ToArray();
+            var foundSupplier = this._context.Providers.FirstOrDefault( e => e.Id == int.Parse(dataSource[0].ToString()) );
+            if (foundSupplier == null) return -1;
+            foundSupplier.Name = dataSource[1].ToString();
+            foundSupplier.Phone = dataSource[2].ToString();
+            return this._context.SaveChanges();
         }
         public void saveChange()
         {
