@@ -73,6 +73,8 @@
             // 
             // dgvProvider
             // 
+            dgvProvider.AllowUserToAddRows = false;
+            dgvProvider.AllowUserToDeleteRows = false;
             dgvProvider.AutoGenerateColumns = false;
             dgvProvider.BackgroundColor = Color.LightPink;
             dgvProvider.BorderStyle = BorderStyle.Fixed3D;
@@ -82,6 +84,7 @@
             dgvProvider.GridColor = SystemColors.WindowText;
             dgvProvider.Location = new Point(130, 228);
             dgvProvider.Name = "dgvProvider";
+            dgvProvider.ReadOnly = true;
             dgvProvider.RowHeadersWidth = 82;
             dgvProvider.Size = new Size(691, 551);
             dgvProvider.TabIndex = 10;
@@ -103,6 +106,7 @@
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
             nameDataGridViewTextBoxColumn.MinimumWidth = 10;
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
             nameDataGridViewTextBoxColumn.Width = 200;
             // 
             // phoneDataGridViewTextBoxColumn
@@ -111,6 +115,7 @@
             phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
             phoneDataGridViewTextBoxColumn.MinimumWidth = 10;
             phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            phoneDataGridViewTextBoxColumn.ReadOnly = true;
             phoneDataGridViewTextBoxColumn.Width = 200;
             // 
             // providerBindingSource

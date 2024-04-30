@@ -32,9 +32,11 @@ namespace SPA.UI
 
         private void loadDataSource()
         {
-            var paramsQuery = new Dictionary<string, object>();
-            // this.dgvProvider.DataSource = this.manageProvider.list(paramsQuery);
-            this.providerBindingSource.DataSource = this.manageProvider.bindingList();
+            var paramsQuery = new Dictionary<string, string>();
+            this.dgvProvider.DataSource = this.manageProvider.list(paramsQuery);
+            // this.providerBindingSource.DataSource = this.manageProvider.bindingList();
+            this.dgvProvider.Update();
+            this.dgvProvider.Refresh();
         }
         private void initComponent()
         {
@@ -63,6 +65,8 @@ namespace SPA.UI
             };
 
             this.dgvProvider.DataSource = this.manageProvider.list( paramsSearch );
+            this.dgvProvider.Update();
+            this.dgvProvider.Refresh();
         }
         private void containerPanelActions_Paint(object sender, PaintEventArgs e)
         {
