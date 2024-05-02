@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace SPA.UI
 {
-    public partial class ListSupplier : Form
+    public partial class ListPerson : Form
     {
-        public SPA.Application.ManageProvider? manageProvider;
+        public SPA.Application.ManagePerson? managePerson;
         private bool isSelectedRow = false;
         private DataGridViewRow? selectedRow = null;
 
-        public ListSupplier()
+        public ListPerson()
         {
             InitializeComponent();
-            if (this.manageProvider == null)
-                this.manageProvider = new SPA.Application.ManageProvider();
+            if (this.managePerson == null)
+                this.managePerson = new SPA.Application.ManagePerson();
         }
 
-        private void ListSupplier_Load(object sender, EventArgs e)
+        private void ListPerson_Load(object sender, EventArgs e)
         {
             this.loadDataSource();
             this.initComponent();
@@ -33,55 +33,53 @@ namespace SPA.UI
         private void loadDataSource()
         {
             var paramsQuery = new Dictionary<string, string>();
-            //this.dgvProvider.DataSource = new List<object>();
-            //this.dgvProvider.Refresh();
-            this.dgvProvider.DataSource = this.manageProvider.list(paramsQuery);
-            //this.providerBindingSource.DataSource = this.manageProvider.bindingList();
-            this.dgvProvider.Refresh();
+            this.dgvPerson.DataSource = this.managePerson.list(paramsQuery);
+            //this.providerBindingSource.DataSource = this.managePerson.bindingList();
+            this.dgvPerson.Refresh();
+            this.dgvPerson.RefreshEdit();
         }
         private void initComponent()
         {
-            this.toolTipSearchButton.SetToolTip(this.btnSearch, "Busque un proveedor por su nombre.");
-            this.toolTipAddAction.SetToolTip(this.pbAddAction, "Agregar proveedor");
-            this.toolTipUpdateAction.SetToolTip(this.pbUpdateAction, "Actualizar proveedor");
-            this.toolTipDeleteAction.SetToolTip(this.pbDeleteAction, "Eliminar proveedor");
+            this.toolTipSearchButton.SetToolTip(this.btnSearch, "Busque una persona por su nombre.");
+            this.toolTipAddAction.SetToolTip(this.pbAddAction, "Agregar persona");
+            this.toolTipUpdateAction.SetToolTip(this.pbUpdateAction, "Actualizar persona");
+            this.toolTipDeleteAction.SetToolTip(this.pbDeleteAction, "Eliminar persona");
 
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            this.validateSearch();
+            validateSearch();
         }
         private void ctSearchTerm_Enter(object sender, EventArgs e)
         {
             validateSearch();
         }
-        private void validateSearch()
-        {
+        private void validateSearch() {
             if (this.ctSearchTerm.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Debes introducir el nombre del proveedor a buscar.", "Notificación", MessageBoxButtons.OK);
+                MessageBox.Show("Debes introducir el nombre de la persona a buscar.", "Notificación", MessageBoxButtons.OK);
                 this.loadDataSource();
                 return;
             }
-            searchBoxTerm();
-        }
-        private void ctSearchTerm_KeyPress(object sender, KeyPressEventArgs e)
-        {
             this.searchBoxTerm();
         }
         // find a supplier
         private void searchBoxTerm()
         {
-
             var paramsSearch = new Dictionary<string, string>()
             {
-                {"Name", ctSearchTerm.Text.Trim() }
+                {"LastName", ctSearchTerm.Text.Trim() }
             };
 
-            this.dgvProvider.DataSource = this.manageProvider.list(paramsSearch);
-            this.dgvProvider.Update();
-            this.dgvProvider.Refresh();
+            this.dgvPerson.DataSource = this.managePerson.list(paramsSearch);
+            this.dgvPerson.Refresh();
+            this.dgvPerson.RefreshEdit();
         }
+        private void ctSearchTerm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            searchBoxTerm();
+        }
+
         private void containerPanelActions_Paint(object sender, PaintEventArgs e)
         {
 
@@ -94,8 +92,8 @@ namespace SPA.UI
 
         private void pbAdd_Click(object sender, EventArgs e)
         {
-            ManageProvider manageProviderForm = new ManageProvider("add", 0);
-            manageProviderForm.ShowDialog();
+            ManagePerson managePersonForm = new ManagePerson("add", 0);
+            managePersonForm.ShowDialog();
             this.loadDataSource();
         }
 
@@ -114,10 +112,10 @@ namespace SPA.UI
         {
             if (!this.isSelectedRow || this.selectedRow == null)
             {
-                MessageBox.Show("Debe seleccionar un registro de la tabla de proveedores.", "Notificación", MessageBoxButtons.OK);
+                MessageBox.Show("Debe seleccionar un registro de la tabla de personas.", "Notificación", MessageBoxButtons.OK);
                 return;
             }
-            if (this.manageProvider.delete(int.Parse(this.selectedRow.Cells[0].Value.ToString())) > 0)
+            if (this.managePerson.delete(int.Parse(this.selectedRow.Cells[0].Value.ToString())) > 0)
             {
                 MessageBox.Show("El registro fue borrado correctamente.", "Notificación", MessageBoxButtons.OK);
             }
@@ -138,8 +136,8 @@ namespace SPA.UI
                 return;
             }
 
-            ManageProvider manageProviderForm = new ManageProvider("edit", int.Parse(this.selectedRow.Cells[0].Value.ToString()));
-            manageProviderForm.ShowDialog();
+            ManagePerson managePersonForm = new ManagePerson("edit", int.Parse(this.selectedRow.Cells[0].Value.ToString()));
+            managePersonForm.ShowDialog();
 
             this.loadDataSource();
             this.selectedRow = null;
@@ -148,7 +146,7 @@ namespace SPA.UI
 
         private void pbSaveAction_Click(object sender, EventArgs e)
         {
-            this.manageProvider.saveChange();
+            this.managePerson.saveChange();
         }
 
         private void dgvProvider_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -156,7 +154,7 @@ namespace SPA.UI
             if (e.RowIndex >= 0)
             {
                 this.isSelectedRow = true;
-                this.selectedRow = dgvProvider.Rows[e.RowIndex];
+                this.selectedRow = dgvPerson.Rows[e.RowIndex];
             }
         }
 
@@ -165,7 +163,7 @@ namespace SPA.UI
             if (e.RowIndex >= 0)
             {
                 this.isSelectedRow = true;
-                this.selectedRow = dgvProvider.Rows[e.RowIndex];
+                this.selectedRow = dgvPerson.Rows[e.RowIndex];
             }
         }
 

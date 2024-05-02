@@ -1,6 +1,6 @@
 ﻿namespace SPA.UI
 {
-    partial class ListSupplier
+    partial class ListPerson
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListSupplier));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListPerson));
             lbTitle = new Label();
-            dgvProvider = new DataGridView();
+            dgvPerson = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            phoneDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            providerBindingSource = new BindingSource(components);
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            personBindingSource = new BindingSource(components);
             pictureBox1 = new PictureBox();
             pbAddAction = new PictureBox();
             pbUpdateAction = new PictureBox();
@@ -44,20 +46,18 @@
             lbDescriptionSearch = new Label();
             btnSearch = new Button();
             containerPanelActions = new Panel();
-            pbSaveAction = new PictureBox();
             toolTipSearchButton = new ToolTip(components);
             toolTipAddAction = new ToolTip(components);
             toolTipUpdateAction = new ToolTip(components);
             toolTipDeleteAction = new ToolTip(components);
             toolTipSaveAction = new ToolTip(components);
-            ((System.ComponentModel.ISupportInitialize)dgvProvider).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)providerBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPerson).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAddAction).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbUpdateAction).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbDeleteAction).BeginInit();
             containerPanelActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbSaveAction).BeginInit();
             SuspendLayout();
             // 
             // lbTitle
@@ -67,29 +67,29 @@
             lbTitle.Font = new Font("Segoe UI Black", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTitle.Location = new Point(130, 28);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(576, 71);
+            lbTitle.Size = new Size(483, 71);
             lbTitle.TabIndex = 9;
-            lbTitle.Text = "Lista de proveedores";
+            lbTitle.Text = "Lista de personas";
             // 
-            // dgvProvider
+            // dgvPerson
             // 
-            dgvProvider.AllowUserToAddRows = false;
-            dgvProvider.AllowUserToDeleteRows = false;
-            dgvProvider.AutoGenerateColumns = false;
-            dgvProvider.BackgroundColor = Color.LightPink;
-            dgvProvider.BorderStyle = BorderStyle.Fixed3D;
-            dgvProvider.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProvider.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, phoneDataGridViewTextBoxColumn });
-            dgvProvider.DataSource = providerBindingSource;
-            dgvProvider.GridColor = SystemColors.WindowText;
-            dgvProvider.Location = new Point(130, 228);
-            dgvProvider.Name = "dgvProvider";
-            dgvProvider.ReadOnly = true;
-            dgvProvider.RowHeadersWidth = 82;
-            dgvProvider.Size = new Size(691, 551);
-            dgvProvider.TabIndex = 10;
-            dgvProvider.CellClick += dgvProvider_CellClick;
-            dgvProvider.CellDoubleClick += dgvProvider_CellDoubleClick;
+            dgvPerson.AllowUserToAddRows = false;
+            dgvPerson.AllowUserToDeleteRows = false;
+            dgvPerson.AutoGenerateColumns = false;
+            dgvPerson.BackgroundColor = Color.LightPink;
+            dgvPerson.BorderStyle = BorderStyle.Fixed3D;
+            dgvPerson.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPerson.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn });
+            dgvPerson.DataSource = personBindingSource;
+            dgvPerson.GridColor = SystemColors.WindowText;
+            dgvPerson.Location = new Point(130, 228);
+            dgvPerson.Name = "dgvPerson";
+            dgvPerson.ReadOnly = true;
+            dgvPerson.RowHeadersWidth = 82;
+            dgvPerson.Size = new Size(1085, 551);
+            dgvPerson.TabIndex = 10;
+            dgvPerson.CellClick += dgvProvider_CellClick;
+            dgvPerson.CellDoubleClick += dgvProvider_CellDoubleClick;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -103,24 +103,42 @@
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nameDataGridViewTextBoxColumn.HeaderText = "Nombres";
             nameDataGridViewTextBoxColumn.MinimumWidth = 10;
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             nameDataGridViewTextBoxColumn.ReadOnly = true;
             nameDataGridViewTextBoxColumn.Width = 200;
             // 
-            // phoneDataGridViewTextBoxColumn
+            // lastNameDataGridViewTextBoxColumn
             // 
-            phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            phoneDataGridViewTextBoxColumn.HeaderText = "Teléfono";
-            phoneDataGridViewTextBoxColumn.MinimumWidth = 10;
-            phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            phoneDataGridViewTextBoxColumn.Width = 200;
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "Apellidos";
+            lastNameDataGridViewTextBoxColumn.MinimumWidth = 10;
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            lastNameDataGridViewTextBoxColumn.Width = 200;
             // 
-            // providerBindingSource
+            // dNIDataGridViewTextBoxColumn
             // 
-            providerBindingSource.DataSource = typeof(Domain.Entity.Provider);
+            dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            dNIDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            dNIDataGridViewTextBoxColumn.MinimumWidth = 10;
+            dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
+            dNIDataGridViewTextBoxColumn.ReadOnly = true;
+            dNIDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            emailDataGridViewTextBoxColumn.HeaderText = "Correo Electrónico";
+            emailDataGridViewTextBoxColumn.MinimumWidth = 10;
+            emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            emailDataGridViewTextBoxColumn.ReadOnly = true;
+            emailDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // personBindingSource
+            // 
+            personBindingSource.DataSource = typeof(Domain.Entity.Person);
             // 
             // pictureBox1
             // 
@@ -187,9 +205,9 @@
             lbDescriptionSearch.BackColor = Color.Transparent;
             lbDescriptionSearch.Location = new Point(137, 182);
             lbDescriptionSearch.Name = "lbDescriptionSearch";
-            lbDescriptionSearch.Size = new Size(1021, 32);
+            lbDescriptionSearch.Size = new Size(1015, 32);
             lbDescriptionSearch.TabIndex = 19;
-            lbDescriptionSearch.Text = "Usted puede buscar un determinado proveedor para ver sus datos, buscándolo por su nombre";
+            lbDescriptionSearch.Text = "Usted puede buscar una determinada persona, para ver sus datos, buscándola por su apellido.";
             lbDescriptionSearch.Click += lbDescriptionSearch_Click;
             // 
             // btnSearch
@@ -207,29 +225,14 @@
             // containerPanelActions
             // 
             containerPanelActions.BackColor = Color.Transparent;
-            containerPanelActions.Controls.Add(pbSaveAction);
             containerPanelActions.Controls.Add(pbAddAction);
             containerPanelActions.Controls.Add(pbUpdateAction);
             containerPanelActions.Controls.Add(pbDeleteAction);
-            containerPanelActions.Location = new Point(869, 228);
+            containerPanelActions.Location = new Point(1282, 216);
             containerPanelActions.Name = "containerPanelActions";
             containerPanelActions.Size = new Size(400, 610);
             containerPanelActions.TabIndex = 21;
             containerPanelActions.Paint += containerPanelActions_Paint;
-            // 
-            // pbSaveAction
-            // 
-            pbSaveAction.BackColor = Color.Transparent;
-            pbSaveAction.BackgroundImage = (Image)resources.GetObject("pbSaveAction.BackgroundImage");
-            pbSaveAction.BackgroundImageLayout = ImageLayout.Stretch;
-            pbSaveAction.Cursor = Cursors.Hand;
-            pbSaveAction.Location = new Point(128, 461);
-            pbSaveAction.Name = "pbSaveAction";
-            pbSaveAction.Size = new Size(132, 121);
-            pbSaveAction.TabIndex = 16;
-            pbSaveAction.TabStop = false;
-            pbSaveAction.Visible = false;
-            pbSaveAction.Click += pbSaveAction_Click;
             // 
             // toolTipSearchButton
             // 
@@ -245,32 +248,31 @@
             // 
             toolTipUpdateAction.Popup += toolTipUpdateAction_Popup;
             // 
-            // ListSupplier
+            // ListPerson
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1350, 850);
+            ClientSize = new Size(1730, 850);
             Controls.Add(containerPanelActions);
             Controls.Add(btnSearch);
             Controls.Add(lbDescriptionSearch);
             Controls.Add(ctSearchTerm);
             Controls.Add(pictureBox1);
-            Controls.Add(dgvProvider);
+            Controls.Add(dgvPerson);
             Controls.Add(lbTitle);
-            Name = "ListSupplier";
+            Name = "ListPerson";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Gestionar Proveedor";
-            Load += ListSupplier_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvProvider).EndInit();
-            ((System.ComponentModel.ISupportInitialize)providerBindingSource).EndInit();
+            Text = "Gestionar Persona";
+            Load += ListPerson_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvPerson).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAddAction).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbUpdateAction).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbDeleteAction).EndInit();
             containerPanelActions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbSaveAction).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -278,8 +280,7 @@
         #endregion
 
         private Label lbTitle;
-        private DataGridView dgvProvider;
-        private BindingSource providerBindingSource;
+        private DataGridView dgvPerson;
         private PictureBox pictureBox1;
         private PictureBox pbAddAction;
         private PictureBox pbUpdateAction;
@@ -288,14 +289,16 @@
         private Label lbDescriptionSearch;
         private Button btnSearch;
         private Panel containerPanelActions;
-        private PictureBox pbSaveAction;
         public ToolTip toolTipSearchButton;
         private ToolTip toolTipAddAction;
         private ToolTip toolTipUpdateAction;
         private ToolTip toolTipDeleteAction;
         private ToolTip toolTipSaveAction;
+        private BindingSource personBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }

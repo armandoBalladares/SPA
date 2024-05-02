@@ -158,3 +158,6 @@ C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.
 C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.genruntimeconfig.cache
 C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\ref\SPA.dll
 C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.UI.ListSupplier.resources
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.UI.Home.resources
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.UI.ManagePerson.resources
+C:\Users\DELL 7480\Documents\Development\Pract\SPA\obj\Debug\net8.0-windows\SPA.UI.ListPerson.resources
